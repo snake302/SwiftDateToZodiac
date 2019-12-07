@@ -18,7 +18,7 @@ public enum Zodiac {
     case Libra
     case Scorpio
     case Sagittarius
-    case Capicorn
+    case Capricorn
     case Aquarius
     case Pisces
     case Undefined
@@ -54,7 +54,7 @@ extension Date {
         case (11, 22...30), (12, 1...21):
             return .Sagittarius
         case (12, 22...31), (1, 1...19):
-            return .Capicorn
+            return .Capricorn
         case (1, 20...31), (2, 1...18):
             return .Aquarius
         case (2, 19...29), (3, 1...20):
