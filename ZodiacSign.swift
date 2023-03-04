@@ -24,6 +24,24 @@ public enum Zodiac {
     case Undefined
 }
 
+extension Zodiac: CaseIterable {
+    public static var allCases: [Zodiac] = [
+        .Aries,
+        .Taurus,
+        .Gemini,
+        .Cancer,
+        .Lion,
+        .Virgo,
+        .Libra,
+        .Scorpio,
+        .Sagittarius,
+        .Capricorn,
+        .Aquarius,
+        .Pisces
+    ]
+}
+
+
 extension Date {
     public var zodiac: Zodiac {
         guard let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
