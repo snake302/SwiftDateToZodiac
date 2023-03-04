@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Zodiac {
+public enum Zodiac: String {
     case Aries
     case Taurus
     case Gemini
@@ -39,6 +39,38 @@ extension Zodiac: CaseIterable {
         .Aquarius,
         .Pisces
     ]
+}
+
+extension Zodiac {
+    public var sign: Character {
+        switch self {
+        case .Aries:       return "\u{2648}"
+        case .Taurus:      return "\u{2649}"
+        case .Gemini:      return "\u{264A}"
+        case .Cancer:      return "\u{264B}"
+        case .Lion:        return "\u{264C}"
+        case .Virgo:       return "\u{264D}"
+        case .Libra:       return "\u{264E}"
+        case .Scorpio:     return "\u{264F}"
+        case .Sagittarius: return "\u{2650}"
+        case .Capricorn:   return "\u{2651}"
+        case .Aquarius:    return "\u{2652}"
+        case .Pisces:      return "\u{2653}"
+        default:           return "?"
+        }
+    }
+    
+    public var name: String {
+        self.rawValue
+    }
+}
+
+extension Zodiac: Hashable {}
+
+extension Zodiac: CustomStringConvertible {
+    public var description: String {
+        String(repeating: sign, count: 1)
+    }
 }
 
 
