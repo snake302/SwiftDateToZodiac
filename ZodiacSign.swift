@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Zodiac: String {
+public enum Zodiac {
     case Aries
     case Taurus
     case Gemini
@@ -61,7 +61,21 @@ extension Zodiac {
     }
     
     public var name: String {
-        self.rawValue
+        switch self {
+        case .Aries:       return "Aries"
+        case .Taurus:      return "Taurus"
+        case .Gemini:      return "Gemini"
+        case .Cancer:      return "Cancer"
+        case .Lion:        return "Lion"
+        case .Virgo:       return "Virgo"
+        case .Libra:       return "Libra"
+        case .Scorpio:     return "Scorpio"
+        case .Sagittarius: return "Sagittarius"
+        case .Capricorn:   return "Capricorn"
+        case .Aquarius:    return "Aquarius"
+        case .Pisces:      return "Pisces"
+        default:           return "Undefined"
+        }
     }
 }
 
@@ -69,7 +83,7 @@ extension Zodiac: Hashable {}
 
 extension Zodiac: CustomStringConvertible {
     public var description: String {
-        String(repeating: sign, count: 1)
+        name
     }
 }
 
