@@ -24,6 +24,70 @@ public enum Zodiac {
     case Undefined
 }
 
+extension Zodiac: CaseIterable {
+    public static var allCases: [Zodiac] = [
+        .Aries,
+        .Taurus,
+        .Gemini,
+        .Cancer,
+        .Lion,
+        .Virgo,
+        .Libra,
+        .Scorpio,
+        .Sagittarius,
+        .Capricorn,
+        .Aquarius,
+        .Pisces
+    ]
+}
+
+extension Zodiac {
+    public var sign: Character {
+        switch self {
+        case .Aries:       return "\u{2648}"
+        case .Taurus:      return "\u{2649}"
+        case .Gemini:      return "\u{264A}"
+        case .Cancer:      return "\u{264B}"
+        case .Lion:        return "\u{264C}"
+        case .Virgo:       return "\u{264D}"
+        case .Libra:       return "\u{264E}"
+        case .Scorpio:     return "\u{264F}"
+        case .Sagittarius: return "\u{2650}"
+        case .Capricorn:   return "\u{2651}"
+        case .Aquarius:    return "\u{2652}"
+        case .Pisces:      return "\u{2653}"
+        default:           return "?"
+        }
+    }
+    
+    public var name: String {
+        switch self {
+        case .Aries:       return "Aries"
+        case .Taurus:      return "Taurus"
+        case .Gemini:      return "Gemini"
+        case .Cancer:      return "Cancer"
+        case .Lion:        return "Lion"
+        case .Virgo:       return "Virgo"
+        case .Libra:       return "Libra"
+        case .Scorpio:     return "Scorpio"
+        case .Sagittarius: return "Sagittarius"
+        case .Capricorn:   return "Capricorn"
+        case .Aquarius:    return "Aquarius"
+        case .Pisces:      return "Pisces"
+        default:           return "Undefined"
+        }
+    }
+}
+
+extension Zodiac: Hashable {}
+
+extension Zodiac: CustomStringConvertible {
+    public var description: String {
+        name
+    }
+}
+
+
 extension Date {
     public var zodiac: Zodiac {
         guard let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
