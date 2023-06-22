@@ -20,8 +20,4 @@ Output will be like:
 Aquarius
 </pre>
 
-If you need covert sign to String, use:
-
-<pre>
-let signString = String(describing: date.zodiac)
-</pre>
+Also you can use .zodiac.name for string & .zodiac.sign for emoji
